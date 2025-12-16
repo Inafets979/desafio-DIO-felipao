@@ -1,22 +1,30 @@
-nome_heroi = input("Qual é seu nome heroi?")
-Xprience = int(input("Quantos pontos de experiência você tem? "))
+nome_heroi = input("Qual é seu nome heroi?").strip()
 
+def ler_int(prompt):
+    while True:
+        s = input(prompt).strip()
+        try:
+            return int(s)
+        except ValueError:
+            print("Entrada inválida. Digite um número inteiro.")
 
-if Xprience < 1000:
+experiencia = ler_int("Quantos pontos de experiência você tem? ")
+
+if experiencia < 1000:
     nivel_heroi = "Ferro"
-elif Xprience >= 1001 and Xprience < 2000:
+elif experiencia < 2000:
     nivel_heroi = "Bronze"
-elif Xprience >= 2001 and Xprience < 5000:
+elif experiencia < 5000:
     nivel_heroi = "Prata"
-elif Xprience >= 5001 and Xprience < 7000:  
+elif experiencia < 7000:
     nivel_heroi = "Ouro"
-elif Xprience >= 7001 and Xprience < 8000:
+elif experiencia < 8000:
     nivel_heroi = "Platina"
-elif Xprience >= 8001 and Xprience < 9000:
-    nivel_heroi = "Ascendente"        
-elif Xprience >= 9001 and Xprience < 10000:
+elif experiencia < 9000:
+    nivel_heroi = "Ascendente"
+elif experiencia < 10000:
     nivel_heroi = "Imortal"
 else:
     nivel_heroi = "Radiante"
 
-print ("O Herói de nome ", nome_heroi, "está no nível de " , Xprience, "e é classificado como ", nivel_heroi)
+print(f"O Herói de nome {nome_heroi} está no nível de {experiencia} e é classificado como {nivel_heroi}")
